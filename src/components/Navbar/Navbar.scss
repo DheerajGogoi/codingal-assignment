@@ -1,0 +1,69 @@
+.navbar{
+    .navbar-brand{
+        font-weight: bolder;
+        font-size: 1.7rem;
+    }
+    .penguin{
+        display: block;
+    }
+
+    .logo{
+        display: none;
+    }
+    @media screen and (max-width: 999px) {
+        .penguin{
+            display: none;
+        }
+        .logo{
+            display: block;
+        }
+        .trial-lesson{
+            display: none;
+        }
+        
+    }
+}
+
+.modal-content{
+    width: 600px;
+    margin-left: -50px;
+    transition: 0.3s ease all;
+
+    .modal-body{
+        padding: 20px;
+        padding-left: 50px;
+        margin-top: -20px;
+        
+        .end-header{
+            font-size: 1.5rem;
+            font-weight: bolder;
+            color: black;
+        }
+
+        .btn-grp{
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .sub-reasons{
+            margin-left: 30px;
+
+            .reason-textarea{
+                width: 90%;
+                border: 2px solid rgba(58, 58, 58, 0.418);
+                border-radius: 4px;
+            }
+            .reason-textarea:focus{
+                outline: none;
+                border: 2px solid #ff5d22;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .modal-content{
+        width: 100% !important;
+        margin-left: 0px;
+    }
+}
