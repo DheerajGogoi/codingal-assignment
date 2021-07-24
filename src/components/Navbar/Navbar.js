@@ -12,9 +12,14 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import penguin from '../../assests/Penguin_Big.png';
 import logo from '../../assests/logo-with-text.svg'
+import Posts from '../Posts/Posts';
+import Passengers from '../Passengers/Passengers';
 
 
 export default function Navbar(){
+    const [post, setPost] = useState(false);
+    const [passenger, setPassenger] = useState(false);
+
     const [menu, setMenu] = useState(false);
     const [modal, setModal] = useState(false);
 
@@ -52,10 +57,13 @@ export default function Navbar(){
         <div>
             <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
                 <div className='container'>
-                    <a className="navbar-brand penguin" href="/"><img src={penguin} alt='penguin' className='img-fluid' style={{
+                    <a className="navbar-brand penguin" href="#" onClick={()=>{
+                        setPost(false);
+                        setPassenger(false);
+                    }}><img src={penguin} alt='penguin' className='img-fluid' style={{
                         width: '50px'
                     }} /></a>
-                    <a className="navbar-brand logo" href="/"><img src={logo} alt='logo' className='img-fluid' style={{
+                    <a className="navbar-brand logo" href="#"><img src={logo} alt='logo' className='img-fluid' style={{
                         height: '44px'
                     }}/></a>
                     <span className='trial-lesson'>Trial Lesson [Grade 1-3]</span>
@@ -68,10 +76,16 @@ export default function Navbar(){
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="/posts">Posts</a>
+                                <a className="nav-link" href="#" onClick={()=>{
+                                    setPost(true);
+                                    setPassenger(false);
+                                }}>Posts</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/passengers">Passengers</a>
+                                <a className="nav-link" href="#" onClick={()=>{
+                                    setPost(false);
+                                    setPassenger(true);
+                                }}>Passengers</a>
                             </li>
                         </ul>
                         <ul className="navbar-nav ml-auto">
@@ -178,6 +192,10 @@ export default function Navbar(){
                     </div>
                 </ModalBody>
             </Modal>
+
+            <Posts visible={post} />
+            <Passengers visible={passenger} />
+
         </div>
     )
 }

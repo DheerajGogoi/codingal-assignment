@@ -12,7 +12,7 @@ import useFetch from '../hooks/useFetch';
 
 
 
-export default function Passengers() {
+export default function Passengers({visible}) {
 
     const [page, setPage] = useState(0);
     const { loading, error, list } = useFetch('10', page);
@@ -36,7 +36,9 @@ export default function Passengers() {
     }, [handleObserver]);
 
     return(
-        <div className='passengers'>
+        <div className='passengers' style={{
+            display: visible ? 'block' : 'none'
+        }}>
             <div className='container'>
                 <h1 className='passengers-header'>Passengers</h1>
                 <div className='row'>

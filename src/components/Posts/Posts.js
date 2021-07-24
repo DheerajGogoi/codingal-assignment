@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
-export default function Posts() {
+export default function Posts({visible}) {
 
     const [posts, setPosts] = useState([]);
     const url = "https://jsonplaceholder.typicode.com/posts";
@@ -38,7 +38,9 @@ export default function Posts() {
     if (error) return <p>Error!</p>;
 
     return(
-        <div className='posts'>
+        <div className='posts' style={{
+            display: visible ? 'block' : 'none'
+        }}>
             <div className='container'>
                 <h1 className='posts-header'>Posts</h1>
                 <div className='row'>

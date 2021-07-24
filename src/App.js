@@ -13,16 +13,16 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Router>
+      {/* <Router>
         <Switch>
           <Route path="/posts">
-            <Posts />
+            
           </Route>
           <Route path="/passengers">
-            <Passengers />
+            
           </Route>
         </Switch>
-    </Router>
+      </Router> */}
     </div>
   );
 }
