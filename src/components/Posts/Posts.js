@@ -22,10 +22,8 @@ export default function Posts() {
                 const response = await result.json();
                 setPosts(response);
                 setIsloading(false);
-                console.log(response);
             }
             catch (e) {
-                console.log(e);
                 setError(e);
             }
         }

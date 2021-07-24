@@ -34,7 +34,6 @@ export default function Passengers() {
         const observer = new IntersectionObserver(handleObserver, option);
         if (loader.current) observer.observe(loader.current);
     }, [handleObserver]);
-    console.log("This is list", list);
 
     return(
         <div className='passengers'>
